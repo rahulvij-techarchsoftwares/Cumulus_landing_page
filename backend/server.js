@@ -7,10 +7,10 @@ const assistanceRoutes = require('./routes/assistanceRoutes');
 const emailRoutes = require('./email/emailUtils');
 const faqRoutes = require('./routes/faqRoutes');
 const app = express();
-const PORT = process.env.PORT;
+const PORT = 3000;
 app.use(express.json());
 app.use(cors({
-  origin: 'http://localhost:3002', 
+  origin: 'http://51.20.138.242:3001', 
   credentials: true, 
 }));
 
@@ -28,7 +28,7 @@ mongoose
 
 // Use public IP of EC2 for binding
 const server = app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
+  console.log(`Server running on http://51.20.138.242:${PORT}`);
 });
 
 module.exports = server; // Export the server instance for use in deployment
